@@ -1,0 +1,126 @@
+
+/* NAVBAR */
+
+.navbar {
+  padding: 10px 50px !important;
+  background: rgb(0, 0, 0) !important;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(32, 139, 171, 0.8) 86%
+  ) !important;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  backdrop-filter: blur(1px);
+
+  z-index: 1000;
+}
+/* NAVBAR - LEFT*/
+.navbar .navbar-brand {
+  margin-right: 4em;
+}
+
+.navbar a {
+  color: rgba(255, 255, 255, 0.615) !important;
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.navbar .active a {
+  color: white !important;
+}
+
+.navbar ul a {
+  width: 10%;
+}
+
+/* NAVBAR - SEARCH*/
+
+.navbar button {
+  background-color: #f6c700;
+}
+
+.navbar .input-group {
+  border-radius: 15px !important;
+  background-color: black;
+}
+
+.navbar .input-group-append {
+  padding: 0.75em 1em 0.25em 1em;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbar .input-group select,
+.navbar .input-group > input {
+  background-color: black;
+  color: #b3b3b3;
+}
+
+.navbar .input-group > input {
+  border: none;
+  border-radius: 15px;
+  height: 3em;
+  text-indent: 10px;
+}
+.navbar .input-group > input::placeholder {
+  font-weight: 600;
+  font-size: 17px;
+  color: rgba(255, 255, 255, 0.779);
+}
+
+.navbar .input-group .date {
+  background-color: black;
+  color: #b3b3b3;
+  text-indent: 4px;
+  font-size: 16px;
+}
+.navbar .input-group .date::placeholder {
+  color: #b3b3b3;
+}
+
+.navbar .input-group select,
+.navbar .input-group .date {
+  height: 23px;
+  border: none;
+  display: block;
+  cursor: pointer;
+}
+
+.navbar .input-group p {
+  font-weight: 600;
+  font-size: 16px;
+  color: #f6c700;
+  line-height: 1px;
+  height: 0.5em;
+  margin: 0;
+  padding-left: 0.25em;
+}
+
+.navbar .icon-search {
+  background-color: #f6c700;
+  padding: 0.75em 1.25em 0.5em 1.25em;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  cursor: pointer;
+}
+
+.navbar .hr {
+  margin: auto 0 auto 0;
+  height: 2.25em;
+  width: 0.15em;
+  background-color: rgba(255, 255, 255, 0.749);
+  border-radius: 20px;
+}
+
+/* NAVBAR - Right*/
+
+.navbar .rigth-icons img {
+  margin-left: 2em;
+  cursor: pointer;
+}
