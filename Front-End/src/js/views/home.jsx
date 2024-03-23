@@ -11,6 +11,7 @@ export const Home = () => {
   const { store } = useContext(Context);
 
   const [films, setFilms] = useState(store.films);
+  console.log(store.films)
 
   return (
     <div className="wrapper-home">

@@ -5,21 +5,19 @@ const getState = ({ getStore, getActions, setStore }) => {
     },
     actions: {
       selectFilms: () => {
-        let store;
+        let store = getStore();
 
-        fetch(`http://localhost:8000/films`,{
-          method:'GET',
-          headers : {
-            'Content-Type' : 'application/json'
+        fetch(`http://localhost:8000/films`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
           },
-
         })
           .then((res) => {
             if (!res.ok) throw Error(res.ok);
             return res.json();
           })
           .then((data) => {
-            store = getStore();
             store.films = data;
             setStore(store);
           })
