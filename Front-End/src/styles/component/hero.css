@@ -1,0 +1,39 @@
+/* HERO */
+
+.hero {
+  height: 85vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom: 1px rgba(255, 255, 255, 0.167) solid;
+
+  display: flex;
+}
+
+.hero .content {
+  position: relative;
+  top: 43%;
+  left: 9%;
+
+  height: 5em;
+  width: 28em;
+}
+
+.hero .content * {
+  color: white;
+}
+
+.hero .content h1 {
+  font-size: 78px;
+  line-height: 70px;
+  margin-bottom: 0.6em;
+}
+.hero .content p {
+  font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    width: 200vw;
+  }
+}

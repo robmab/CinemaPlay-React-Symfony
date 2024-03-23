@@ -1,0 +1,99 @@
+body .movie-card {
+  border-radius: 5px;
+
+  height: 30em;
+  margin-bottom: 5em;
+  cursor: pointer;
+}
+
+.body .movie-card * {
+  color: rgb(190, 190, 190);
+}
+
+.body .movie-card .cover {
+  display: flex;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 15em;
+  border-radius: 5px;
+}
+
+.body .movie-card .cover img {
+  margin: auto 0.15em 0.15em auto;
+  cursor: pointer;
+}
+
+.body .movie-card .header h2 {
+  margin-top: 0.5em;
+  font-size: 18px;
+  color: white;
+}
+
+.body .movie-card .header p.date {
+  line-height: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.body .movie-card .header p.rating {
+  line-height: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #f6c700;
+}
+
+.body .movie-card .header p.rating img {
+  margin: 0 0.2em 0.2em 0;
+}
+
+.body .movie-card .header p.rating span {
+  font-size: 11px;
+  color: #a6a6a6;
+}
+
+.body .movie-card .info {
+  word-wrap: break-word;
+}
+
+.body .movie-card .info > p {
+  font-size: 12px;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.body .movie-card .info .lang {
+  display: flex;
+  align-items: center;
+ 
+}
+
+.body .movie-card .info .lang > p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.body .movie-card .info .lang > span {
+  color: white;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.body .movie-card .info .hr {
+  background-color: rgba(215, 215, 215, 0.682);
+  height: 0.5em;
+  width: 0.2px;
+  margin: 0 0.4em;
+}
+
+@media screen and (max-width: 768px) {
+  
+  .body .movie-card .cover img{
+    width: 40px;
+    height: 40px;
+  }
+}

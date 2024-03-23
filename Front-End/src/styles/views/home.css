@@ -1,0 +1,26 @@
+/* BODY */
+.body {
+  background-color: black;
+  padding: 2em 10em;
+}
+
+.body > h1 {
+  text-transform: uppercase;
+  margin: 0 0 2em;
+  color: white;
+  font-size: 26px;
+}
+
+.body .movies {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .body {
+    padding: 2em 2em;
+    width: 200vw ;
+    margin: 0 ;
+  }
+
+}
+
