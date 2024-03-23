@@ -3,3 +3,7 @@
   line-height: 20px;
   /* border: 1px solid green;  */
 }
+
+.hidden {
+  display: none;
+}

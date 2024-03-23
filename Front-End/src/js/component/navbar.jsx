@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 
 import "../../styles/component/navbar.css";
 import logo from '../../img/Logo.png';
+import shop from '../../img/Icon_Icon_Shopping_Cart_white.png';
+import user from '../../img/Usser.png';
+import search from '../../img/Icon_Search-Black.png';
 
 export const Navbar = () => {
   return (
@@ -74,7 +77,7 @@ export const Navbar = () => {
             </div>
             <div className="icon-search" //onClick="filterCards()"
             >
-              <img src="../img/Icon_Search-Black.png" alt="" width="21px" />
+              <img src={search} alt="" width="21px" />
             </div>
           </div>
         </div>
@@ -82,12 +85,12 @@ export const Navbar = () => {
         {/* RIGHT  */}
         <div className="rigth-icons">
           <img
-            src="../img/Icon_Icon_Shopping_Cart_white.png"
+            src={shop}
             alt=""
             height="30px"
             width="30px"
           />
-          <img src="../img/Usser.png" alt="" height="60px" width="60px" />
+          <img src={user} alt="" height="60px" width="60px" />
         </div>
       </nav>
     </>
