@@ -126,7 +126,7 @@
 
 @media screen and (max-width: 768px) {
   .navbar {
-    width: 200vw;
+    width: 100vw;
     margin: 0;
   }
 }

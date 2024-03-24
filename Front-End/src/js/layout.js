@@ -16,17 +16,15 @@ const Layout = () => {
   const basename = process.env.BASENAME || "";
 
   return (
-    <>
-      <BrowserRouter basename={basename}>
-        <ScrollToTop>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-          </Routes>
-          <Footer />
-        </ScrollToTop>
-      </BrowserRouter>
-    </>
+    <BrowserRouter basename={basename}>
+      <ScrollToTop>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+        <Footer />
+      </ScrollToTop>
+    </BrowserRouter>
   );
 };
 

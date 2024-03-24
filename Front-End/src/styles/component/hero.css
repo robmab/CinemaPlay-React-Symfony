@@ -34,6 +34,15 @@
 
 @media screen and (max-width: 768px) {
   .hero {
-    width: 200vw;
+    width: 100%;
+  }
+
+  .hero .content *,
+  .hero .content {
+    width: 80% !important;
+  }
+  .hero .content h1 {
+    font-size: 50px;
+    line-height: 50px;
   }
 }
