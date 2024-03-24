@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 /* npm install --save @fortawesome/react-fontawesome */
@@ -11,6 +11,12 @@ import star from "../../img/Icon_Star.png";
 import "../../styles/component/cover.css";
 
 export const Cover = (props) => {
+  const [like, setLike] = useState(false);
+  
+  const handleLike =()=>{
+    if(!like) setLike(true);
+    else setLike(false)
+  }
 
   return (
     <div
@@ -23,10 +29,9 @@ export const Cover = (props) => {
         className="cover"
         style={{ backgroundImage: `url(${props.backdropPath})` }}
       >
-        <img src={likeWhite} alt="" height="15px" width="15px" />
         <img
-          className="hidden"
-          src={likeRed}
+          onClick={handleLike}
+          src={like ? likeRed : likeWhite}
           alt=""
           height="15px"
           width="15px"

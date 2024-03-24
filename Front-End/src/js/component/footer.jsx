@@ -1,25 +1,25 @@
 import React, { Component } from "react";
 
 import "../../styles/component/footer.css";
-import globe from '../../img/Icon_Globe.png';
-import facebook from '../../img/Icon_Facebook.png';
-import linkedin from '../../img/Icon_Linkedin.png';
-import twitter from '../../img/Icon_Twitter.png';
+import globe from "../../img/Icon_Globe.png";
+import facebook from "../../img/Icon_Facebook.png";
+import linkedin from "../../img/Icon_Linkedin.png";
+import twitter from "../../img/Icon_Twitter.png";
 
 export const Footer = () => (
   <footer>
     <div className="footer container-fluid">
       <div className="content row">
-        <div className="select col-lg-2 col-4">
-          <img src={globe} alt="" width="18px" height="18px" />
-          <select className="form-select" aria-label="Default select example">
-            <option defaultValue="Español">
-              Español
-            </option>
-            <option value="Ingles">Ingles</option>
-          </select>
+        <div className="first col-lg-2 col-4">
+          <div className="select">
+            <img src={globe} alt="" width="18px" height="18px" />
+            <select className=" form-select" aria-label="Default select example">
+              <option defaultValue="Español">Español</option>
+              <option value="Ingles">Ingles</option>
+            </select>
+          </div>
         </div>
-        <div className="mid col-lg-2 col-4" >
+        <div className="mid col-lg-2 col-4">
           <h1>Navegación</h1>
           <p>Top películas</p>
           <p>Próximos estrenos</p>

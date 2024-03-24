@@ -16,25 +16,26 @@
 }
 
 .footer .content h1 {
+  margin-bottom: 0.75em;
+
+  text-transform: uppercase;
   color: white;
   font-size: 18px;
-  margin-bottom: 0.75em;
-  text-transform: uppercase;
 }
 
 .footer .content p {
-  line-height: 12px;
   color: rgb(216, 216, 216);
+  line-height: 12px;
 }
 
-
 .footer .content .select {
-  padding: 0.25em 0.8em;
-  background-color: #362f33;
+  display: flex;
+  padding: 0.25em 0.1em 0.25em 0.7em;
+  width: 9em;
   height: 2em;
   border-radius: 2px;
 
-  display: flex;
+  background-color: #362f33;
 }
 .footer .content .select img {
   margin-top: 0.15em;
@@ -67,14 +68,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  
-  .footer .select ,
-  .footer .social  {
-    display: none !important
+  .footer .first,
+  .footer .social {
+    display: none !important;
   }
 
-  .footer .mid *{
-      font-size: smaller;
+  .footer .mid * {
+    font-size: smaller;
   }
 
   .footer .legal {
