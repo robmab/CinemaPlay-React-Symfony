@@ -25,7 +25,7 @@ export const Cover = (props) => {
     const length = text.innerHTML.length;
     if (length > 150) {
       setMore(true);
-      text.innerHTML = text.innerHTML.slice(0, 100);
+      text.innerHTML = text.innerHTML.slice(0, 100) + "...";
     }
   }, []);
 

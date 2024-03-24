@@ -1,6 +1,6 @@
 const getState = ({ getStore, getActions, setStore }) => {
-const url = "https://5s2j02rg-8000.uks1.devtunnels.ms";
-
+  const url = process.env.URL_FRONT || "localhost:8000";
+  
   return {
     store: {
       films: [],
@@ -22,13 +22,13 @@ const url = "https://5s2j02rg-8000.uks1.devtunnels.ms";
           .then((data) => {
             data = data.map((value) => {
               /* Convert date */
-              value.releaseDate= value.releaseDate
+              value.releaseDate = value.releaseDate
                 .split("T")[0]
                 .toString()
                 .split("-")
                 .reverse()
                 .join("-");
-              
+
               return value;
             });
             /* Sort by Score */
