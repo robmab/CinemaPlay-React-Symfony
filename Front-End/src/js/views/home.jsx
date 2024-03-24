@@ -18,6 +18,7 @@ export const Home = () => {
           {store.films.map((value) => (
             <Cover 
             key={value.id}
+            id={value.id}
             title={value.title}
             releaseDate={value.releaseDate}
             originalLanguage={value.originalLanguage}
