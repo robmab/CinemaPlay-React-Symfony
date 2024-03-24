@@ -1,4 +1,6 @@
 const getState = ({ getStore, getActions, setStore }) => {
+const url = "https://5s2j02rg-8000.uks1.devtunnels.ms";
+
   return {
     store: {
       films: [],
@@ -7,7 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       selectFilms: () => {
         let store = getStore();
 
-        fetch(`http://localhost:8000/films`, {
+        fetch(`${url}/films`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
