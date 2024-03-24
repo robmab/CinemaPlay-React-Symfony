@@ -17,6 +17,7 @@ export const Home = () => {
         <div className="movies row">
           {store.films.map((value) => (
             <Cover 
+            key={value.id}
             title={value.title}
             releaseDate={value.releaseDate}
             originalLanguage={value.originalLanguage}

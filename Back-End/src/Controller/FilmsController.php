@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
@@ -19,7 +20,6 @@ class FilmsController extends AbstractController
 	{
 		$repository = $entityManager->getRepository(Films::class);
 		$films = $repository->findAll();
-		//var_dump($films);
 		return $this->json($films);
 	}
 }

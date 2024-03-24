@@ -11,6 +11,7 @@ import star from "../../img/Icon_Star.png";
 import "../../styles/component/cover.css";
 
 export const Cover = (props) => {
+
   return (
     <div
       className="movie-card col-lg-2 col-6"
@@ -22,15 +23,8 @@ export const Cover = (props) => {
         className="cover"
         style={{ backgroundImage: `url(${props.backdropPath})` }}
       >
+        <img src={likeWhite} alt="" height="15px" width="15px" />
         <img
-          id="like-white-<?php echo $c ?>"
-          src={likeWhite}
-          alt=""
-          height="15px"
-          width="15px"
-        />
-        <img
-          id="like-red-<?php echo $c ?>"
           className="hidden"
           src={likeRed}
           alt=""
