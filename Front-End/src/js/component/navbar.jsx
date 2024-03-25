@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
@@ -9,23 +9,29 @@ import user from "../../img/Usser.png";
 import search from "../../img/Icon_Search-Black.png";
 
 export const Navbar = () => {
-  const {actions } = useContext(Context);
+  const { store, actions } = useContext(Context);
+  const [langList, setLangList] = useState([]);
+
+  useEffect(() => {
+    let languages = [];
+    store.films.map((value) => {
+      languages.push(value.originalLanguage.toUpperCase());
+    });
+    languages = Array.from(new Set(languages));
+    setLangList(languages);
+  }, [store.films]);
 
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [lang, setLang] = useState("");
 
   const handleFilter = (e) => {
-    const n = e.target.value
+    const n = e.target.value;
     setName(n);
-    
-    actions.filter(n,date,lang)
+
+    actions.filter(n, date, lang);
   };
-  const handleClickFilter = () => 
-    actions.filter(name,date,lang)
-  ;
-
-
+  const handleClickFilter = () => actions.filter(name, date, lang);
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -96,8 +102,10 @@ export const Navbar = () => {
                 Elegir idioma
               </option>
               <option value="">Ninguno</option>
-
-              <option value="Hello">Hello</option>
+              {langList.map((value,i) => (
+                <option key={i} value={value}>{value}</option>
+              ))}
+            
             </select>
           </div>
           <div className="icon-search" onClick={handleClickFilter}>
