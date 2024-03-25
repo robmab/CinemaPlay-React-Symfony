@@ -12,6 +12,7 @@ export const Navbar = () => {
   const { store, actions } = useContext(Context);
   const [langList, setLangList] = useState([]);
 
+  /* CHECK FOR LANG SELECT IN STORE */
   useEffect(() => {
     if (langList.length > 0) return;
 
@@ -27,9 +28,6 @@ export const Navbar = () => {
   const [date, setDate] = useState("");
   const [lang, setLang] = useState("");
 
-  const handleFilter = (e) => {
-    const n = e.target.value;
-  };
   const handleClickFilter = () => {
     actions.filter(name, date, lang);
   };
