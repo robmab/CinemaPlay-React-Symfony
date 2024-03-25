@@ -15,8 +15,7 @@ export const Cover = (props) => {
   const [more, setMore] = useState(false);
 
   const handleLike = () => {
-    if (!like) setLike(true);
-    else setLike(false);
+    setLike(!like);
   };
 
   /* Control see more link depends of text size - DOM */

@@ -5,7 +5,7 @@ import "../../styles/component/search.css";
 
 import search from "../../img/Icon_Search-Black.png";
 
-export const Search = () => {
+export const Search = (props) => {
   const { store, actions } = useContext(Context);
   const [langList, setLangList] = useState([]);
 
@@ -57,59 +57,75 @@ export const Search = () => {
   };
 
   return (
-    <div className="input-group">
-      <input
-        value={name}
-        onChange={(e) => {
-          setName(e.target.value);
-          actions.filter(e.target.value, date, lang);
-        }}
-        id="title"
-        placeholder="Buscar película por nombre"
-        type="text"
-        className="form-control"
-        aria-label="Text input with dropdown button"
-        maxLength="9"
-      />
-
-      <div className="hr" style={{ width: "0.1em}" }}></div>
-      <div className="input-group-append">
-        <p>Fecha</p>
+    <>
+      {/* DESKTOP */}
+      <div className="input-group">
         <input
-          value={date}
-          onChange={handleInputDate}
-          id="release-date"
-          className="date"
-          type="text"
-          placeholder="Año1-Año2"
-          onKeyDown={preventCharactersInput}
-        />
-      </div>
-      <div className="hr"></div>
-      <div className="input-group-append">
-        <p>Idioma</p>
-        <select
-          value={lang}
+          value={name}
           onChange={(e) => {
-            setLang(e.target.value);
-            actions.filter(name, date, e.target.value);
+            setName(e.target.value);
+            actions.filter(e.target.value, date, lang);
           }}
-          id="original-language"
-        >
-          <option defaultValue="" disabled hidden>
-            Elegir idioma
-          </option>
-          <option value="">Ninguno</option>
-          {langList.map((value, i) => (
-            <option key={i} value={value}>
-              {value}
+          id="title"
+          placeholder="Buscar película por nombre"
+          type="text"
+          className="form-control"
+          aria-label="Text input with dropdown button"
+          maxLength="9"
+        />
+
+        <div className="hr" style={{ width: "0.1em}" }}></div>
+        <div className="input-group-append">
+          <p>Fecha</p>
+          <input
+            value={date}
+            onChange={handleInputDate}
+            id="release-date"
+            className="date"
+            type="text"
+            placeholder="Año1-Año2"
+            onKeyDown={preventCharactersInput}
+          />
+        </div>
+        <div className="hr"></div>
+        <div className="input-group-append">
+          <p>Idioma</p>
+          <select
+            value={lang}
+            onChange={(e) => {
+              setLang(e.target.value);
+              actions.filter(name, date, e.target.value);
+            }}
+            id="original-language"
+          >
+            <option defaultValue="" disabled hidden>
+              Elegir idioma
             </option>
-          ))}
-        </select>
+            <option value="">Ninguno</option>
+            {langList.map((value, i) => (
+              <option key={i} value={value}>
+                {value}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="icon-search" onClick={handleClickFilter}>
+          <img src={search} alt="" width="21px" />
+        </div>
       </div>
-      <div className="icon-search" onClick={handleClickFilter}>
-        <img src={search} alt="" width="21px" />
-      </div>
-    </div>
+
+      {/* MOBILE */}
+      {props.checkModal && (
+        <div className="input-group-mb container-fluid">
+          <div className="row">
+            <div className="col-12">
+              <p>prueba</p>
+            </div>
+          </div>
+          <div className="row"></div>
+          <div className="row"></div>
+        </div>
+      )}
+    </>
   );
 };

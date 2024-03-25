@@ -14,7 +14,7 @@
   width: 100%;
   backdrop-filter: blur(1px);
 
-  z-index: 1000;
+  z-index: 1000  ;
 }
 /* NAVBAR - LEFT*/
 .navbar .navbar-brand {
