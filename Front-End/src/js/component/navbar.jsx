@@ -13,6 +13,8 @@ export const Navbar = () => {
   const [langList, setLangList] = useState([]);
 
   useEffect(() => {
+    if (langList.length > 0) return;
+
     let languages = [];
     store.films.map((value) => {
       languages.push(value.originalLanguage.toUpperCase());
@@ -27,11 +29,10 @@ export const Navbar = () => {
 
   const handleFilter = (e) => {
     const n = e.target.value;
-    setName(n);
-
-    actions.filter(n, date, lang);
   };
-  const handleClickFilter = () => actions.filter(name, date, lang);
+  const handleClickFilter = () => {
+    actions.filter(name, date, lang);
+  };
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -69,8 +70,10 @@ export const Navbar = () => {
         <div className="input-group">
           <input
             value={name}
-            onChange={handleFilter}
-            onClick={handleClickFilter}
+            onChange={(e) => {
+              setName(e.target.value);
+              actions.filter(e.target.value, date, lang);
+            }}
             id="title"
             placeholder="Buscar película por nombre"
             type="text"
@@ -83,7 +86,10 @@ export const Navbar = () => {
             <p>Fecha</p>
             <input
               value={date}
-              onChange={(e) => setDate(e.target.value)}
+              onChange={(e) => {
+                setDate(e.target.value);
+                actions.filter(name, e.target.value, lang);
+              }}
               id="release-date"
               className="date"
               type="text"
@@ -95,17 +101,21 @@ export const Navbar = () => {
             <p>Idioma</p>
             <select
               value={lang}
-              onChange={(e) => setLang(e.target.value)}
+              onChange={(e) => {
+                setLang(e.target.value);
+                actions.filter(name, date, e.target.value);
+              }}
               id="original-language"
             >
               <option defaultValue="" disabled hidden>
                 Elegir idioma
               </option>
               <option value="">Ninguno</option>
-              {langList.map((value,i) => (
-                <option key={i} value={value}>{value}</option>
+              {langList.map((value, i) => (
+                <option key={i} value={value}>
+                  {value}
+                </option>
               ))}
-            
             </select>
           </div>
           <div className="icon-search" onClick={handleClickFilter}>
