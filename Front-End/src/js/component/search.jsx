@@ -114,16 +114,80 @@ export const Search = (props) => {
         </div>
       </div>
 
-      {/* MOBILE */}
+      {/* MOBILE MODAL*/}
       {props.checkModal && (
         <div className="input-group-mb container-fluid">
           <div className="row">
             <div className="col-12">
-              <p>prueba</p>
+              <input
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                  actions.filter(e.target.value, date, lang);
+                }}
+                id="title"
+                placeholder="Buscar película por nombre"
+                type="text"
+                className="form-control"
+                aria-label="Text input with dropdown button"
+                maxLength="9"
+              />
             </div>
           </div>
-          <div className="row"></div>
-          <div className="row"></div>
+          <div className="row">
+            <div className="col-7">
+              <div id="first" className="input-group-append">
+                <p>Fecha</p>
+                <input
+                  value={date}
+                  onChange={handleInputDate}
+                  id="release-date"
+                  className="date"
+                  type="text"
+                  placeholder="Año1-Año2"
+                  onKeyDown={preventCharactersInput}
+                />
+              </div>
+            </div>
+
+            <div className="col-5">
+              <div id="second" className="input-group-append">
+                <p>Idioma</p>
+                <select
+                  value={lang}
+                  onChange={(e) => {
+                    setLang(e.target.value);
+                    actions.filter(name, date, e.target.value);
+                  }}
+                  id="original-language"
+                >
+                  <option defaultValue="" disabled hidden>
+                    Elegir idioma
+                  </option>
+                  <option value="">Ninguno</option>
+                  {langList.map((value, i) => (
+                    <option key={i} value={value}>
+                      {value}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-5">
+              <div
+                className="icon-search"
+                onClick={() => {
+                  props.setShowModal(false)
+                  handleClickFilter();
+                }}
+              >
+                <p>Buscar</p>
+                <img src={search} alt="" width="21px" />
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </>

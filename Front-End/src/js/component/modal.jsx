@@ -27,7 +27,7 @@ export const Modal = (props) => {
 
   return (
     <div ref={wrapperRef} className="modal">
-      <Search checkModal={true}/>
+      <Search setShowModal={props.setShowModal} checkModal={true} />
     </div>
   );
 };
