@@ -31,6 +31,7 @@ export const Search = () => {
 
   const handleInputDate = (e) => {
     /* AUTO WRITTE/DELETE "-" */
+    console.log(e);
     if (e.target.value.length === 4) setDate(e.target.value + "-");
     else if (e.target.value.length === 5) setDate(e.target.value.slice(0, -1));
     else setDate(e.target.value);
@@ -40,8 +41,15 @@ export const Search = () => {
   /* FOR CONTROL CHARACTERS ALLOWED ON INPUT */
   const preventCharactersInput = (e) => {
     const value = e.target.value;
+    if (value.length === 5 && e.key === "Backspace") {
+      setDate(date + " ");
+    }
+    if (value.length === 4 && e.key !== "Backspace") {
+      setDate(date + "-");
+    }
+
     if (e.key === "Backspace") return;
-    const re = /[0-9-]+/g;
+    const re = /[0-9]+/g;
 
     if (!re.test(e.key) || value.length === 9) {
       e.preventDefault();
