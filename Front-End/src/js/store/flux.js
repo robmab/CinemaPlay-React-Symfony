@@ -1,5 +1,5 @@
 const getState = ({ getStore, getActions, setStore }) => {
-  const url = process.env.URL_FRONT || "localhost:8000";
+  const url = process.env.URL_BACK || "localhost:8000";
 
   return {
     store: {
