@@ -1,9 +1,10 @@
 const getState = ({ getStore, getActions, setStore }) => {
   const url = process.env.URL_FRONT || "localhost:8000";
-  
+
   return {
     store: {
       films: [],
+      auxFilms: [],
     },
     actions: {
       selectFilms: () => {
@@ -34,9 +35,26 @@ const getState = ({ getStore, getActions, setStore }) => {
             /* Sort by Score */
             data.sort(compareScore);
             store.films = data;
+            store.auxFilms = data;
             setStore(store);
           })
           .catch((error) => console.log(error));
+      },
+
+      filter: (name, date, lang) => {
+        let store = getStore();
+        (name = name.toLowerCase()), (date = date.toLowerCase());
+        lang = lang.toLowerCase();
+
+        store.films = store.auxFilms.filter((value) => {
+          return (
+            value.title.toLowerCase().includes(name) &&
+            value.releaseDate.toLowerCase().includes(date) &&
+            value.originalLanguage.toLowerCase().includes(lang)
+          );
+        });
+
+        setStore(store);
       },
     },
   };
