@@ -46,10 +46,16 @@ const getState = ({ getStore, getActions, setStore }) => {
         (name = name.toLowerCase()), (date = date.toLowerCase());
         lang = lang.toLowerCase();
 
+        const date1 = parseInt(date.split("-")[0]) || 0;
+        let date2 = parseInt(date.split("-")[1]) || 999999;
+        if (date2.toString().length < 4) date2 = 999999;
+
         store.films = store.auxFilms.filter((value) => {
+          const releaseYear = parseInt(value.releaseDate.split("-")[2]);
           return (
             value.title.toLowerCase().includes(name) &&
-            value.releaseDate.toLowerCase().includes(date) &&
+            date1 <= releaseYear &&
+            releaseYear <= date2 &&
             value.originalLanguage.toLowerCase().includes(lang)
           );
         });

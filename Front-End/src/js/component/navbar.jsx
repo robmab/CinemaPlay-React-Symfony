@@ -31,6 +31,26 @@ export const Navbar = () => {
   const handleClickFilter = () => {
     actions.filter(name, date, lang);
   };
+
+  const handleInputDate = (e) => {
+    /* AUTO WRITTE/DELETE "-" */
+    if (e.target.value.length === 4) setDate(e.target.value + "-");
+    else if (e.target.value.length === 5) setDate(e.target.value.slice(0, -1));
+    else setDate(e.target.value);
+    actions.filter(name, e.target.value, lang);
+  };
+
+  /* FOR CONTROL CHARACTERS ALLOWED ON INPUT */
+  const preventCharactersInput = (e) => {
+    const value = e.target.value;
+    if (e.key === "Backspace") return;
+    const re = /[0-9-]+/g;
+
+    if (!re.test(e.key) || value.length === 9) {
+      e.preventDefault();
+    }
+  };
+
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -77,6 +97,7 @@ export const Navbar = () => {
             type="text"
             className="form-control"
             aria-label="Text input with dropdown button"
+            maxLength="9"
           />
 
           <div className="hr" style={{ width: "0.1em}" }}></div>
@@ -84,14 +105,12 @@ export const Navbar = () => {
             <p>Fecha</p>
             <input
               value={date}
-              onChange={(e) => {
-                setDate(e.target.value);
-                actions.filter(name, e.target.value, lang);
-              }}
+              onChange={handleInputDate}
               id="release-date"
               className="date"
               type="text"
               placeholder="Año1-Año2"
+              onKeyDown={preventCharactersInput}
             />
           </div>
           <div className="hr"></div>
