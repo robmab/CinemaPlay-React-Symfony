@@ -40,7 +40,7 @@ export const Navbar = () => {
         {showModal && <Modal setShowModal={setShowModal} />}
 
         {/* RIGHT  */}
-        <div className="rigth-icons">
+        <div className="rigth-icons ms-auto">
           <img
             onClick={() => {
               setShowModal(!showModal);

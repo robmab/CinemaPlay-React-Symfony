@@ -48,7 +48,7 @@
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   .navbar {
     width: 100vw;
 
