@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState , useEffect} from "react";
 import { Link } from "react-router-dom";
 
 /* npm install --save @fortawesome/react-fontawesome */
@@ -28,9 +28,6 @@ export const Cover = (props) => {
     }
   }, []);
 
- 
-    const height = document.querySelector("#overview").scrollHeight;
-    console.log(height)
   
 
   return (
