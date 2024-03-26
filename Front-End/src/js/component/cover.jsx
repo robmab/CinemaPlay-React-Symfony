@@ -28,10 +28,6 @@ export const Cover = (props) => {
     }
   }, []);
 
- 
-    const height = document.querySelector("#overview").scrollHeight;
-    console.log(height)
-  
 
   return (
     <div
