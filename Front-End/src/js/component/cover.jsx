@@ -28,7 +28,6 @@ export const Cover = (props) => {
     }
   }, []);
 
-  
 
   return (
     <div
