@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import { Link } from "react-router-dom";
 
 /* npm install --save @fortawesome/react-fontawesome */
@@ -12,11 +12,16 @@ import "../../styles/component/cover.css";
 
 export const Cover = (props) => {
   const [like, setLike] = useState(false);
-  
+
   const handleLike =()=>{
     if(!like) setLike(true);
     else setLike(false)
   }
+
+ 
+    const height = document.querySelector("#overview").scrollHeight;
+    console.log(height)
+  
 
   return (
     <div
@@ -47,7 +52,7 @@ export const Cover = (props) => {
         </p>
       </div>
       <div className="info">
-        <p>{props.overview}</p>
+        <p id="overview">{props.overview}</p>
         <div className="lang">
           <p className="">Idioma</p>
           <div className="hr"></div>
