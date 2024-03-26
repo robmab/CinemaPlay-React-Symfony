@@ -4,8 +4,12 @@
 
 ## Features
 
+### Front-end
+> - Node 12.22.9
+
 ### Back-end
 > - PHP 8.1.2-1ubuntu2.14
-> - Tipo de servidor: MySQL
-> - Versión del servidor: 8.0.36-0ubuntu0.22.04.1 - (Ubuntu)
+> - MySQL - 8.0.36-0ubuntu0.22.04.1 - Ubuntu
 > - Symfony 6.4.5
+> - Composer 2.7.2
+> - Twig
