@@ -14,7 +14,7 @@
   width: 100%;
   backdrop-filter: blur(1px);
 
-  z-index: 1000;
+  z-index: 1000  ;
 }
 /* NAVBAR - LEFT*/
 .navbar .navbar-brand {
@@ -36,97 +36,57 @@
   width: 10%;
 }
 
-/* NAVBAR - SEARCH*/
-
-.navbar button {
-  background-color: #f6c700;
-}
-
-.navbar .input-group {
-  border-radius: 15px !important;
-  background-color: black;
-}
-
-.navbar .input-group-append {
-  padding: 0.75em 1em 0.25em 1em;
-  background-color: black;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.navbar .input-group select,
-.navbar .input-group > input {
-  background-color: black;
-  color: #b3b3b3;
-}
-
-.navbar .input-group > input {
-  border: none;
-  border-radius: 15px;
-  height: 3em;
-  text-indent: 10px;
-}
-.navbar .input-group > input::placeholder {
-  font-weight: 600;
-  font-size: 17px;
-  color: rgba(255, 255, 255, 0.779);
-}
-
-.navbar .input-group .date {
-  background-color: black;
-  color: #b3b3b3;
-  text-indent: 4px;
-  font-size: 16px;
-}
-.navbar .input-group .date::placeholder {
-  color: #b3b3b3;
-}
-
-.navbar .input-group select,
-.navbar .input-group .date {
-  height: 23px;
-  border: none;
-  display: block;
-  cursor: pointer;
-}
-
-.navbar .input-group p {
-  font-weight: 600;
-  font-size: 16px;
-  color: #f6c700;
-  line-height: 1px;
-  height: 0.5em;
-  margin: 0;
-  padding-left: 0.25em;
-}
-
-.navbar .icon-search {
-  background-color: #f6c700;
-  padding: 0.75em 1.25em 0.5em 1.25em;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  cursor: pointer;
-}
-
-.navbar .hr {
-  margin: auto 0 auto 0;
-  height: 2.25em;
-  width: 0.15em;
-  background-color: rgba(255, 255, 255, 0.749);
-  border-radius: 20px;
-}
-
 /* NAVBAR - Right*/
+
+.navbar .rigth-icons {
+  display: flex;
+  align-items: center;
+}
 
 .navbar .rigth-icons img {
   margin-left: 2em;
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1200px) {
   .navbar {
     width: 100vw;
+
     margin: 0;
+    padding: 10px 20px !important;
+  }
+
+  .navbar .navbar-brand img {
+    width: 80px;
+    height: 40px !important;
+  }
+  .navbar .navbar-brand {
+    margin-right: 0.7em;
+    
+  }
+  .navbar .navbar-nav li,
+  .navbar .navbar-nav ul {
+    width: 4em ;
+  }
+
+  .navbar .navbar-nav li a{
+    font-size: 10px;
+    line-height: 15px;
+    padding: 0 !important;
+  }
+
+  .navbar .rigth-icons *{
+    margin: 0 0.3em !important;
+  }
+
+  .navbar .rigth-icons img#second{
+    height: 45px;
+    width: 45px;
+  }
+
+  .navbar .rigth-icons .zero{
+    height: 25px;
+    width: 25px;
+    display: block !important;
   }
 }

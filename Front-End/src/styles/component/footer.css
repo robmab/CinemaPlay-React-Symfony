@@ -44,13 +44,18 @@
 
 .footer .content .select select {
   line-height: 12px;
-  background-color: #16121400;
+
   border: none;
   color: rgb(232, 232, 232) !important;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="%23ffffff" d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"/></svg>')
     right 1rem center/8px 10px no-repeat;
   font-weight: 300;
   font-size: 14px;
+  background-color: #16121400 !important;
+}
+
+.footer .content .select select option {
+  background: #362a29;
 }
 
 .footer .social img {
@@ -68,9 +73,56 @@
 }
 
 @media screen and (max-width: 768px) {
+  .footer {
+    padding-top: 1.5em;
+  }
+
   .footer .first,
   .footer .social {
     display: none !important;
+  }
+
+  .footer .mobile {
+    display: flex !important;
+    width: 100%;
+  }
+
+  .footer .mobile .rigth,
+  .footer .mobile .left {
+    display: flex;
+
+    align-items: center;
+  }
+
+  .footer .mobile .left {
+    margin-bottom: 0.2em;
+    padding: 0;
+  }
+
+  .footer .content .select {
+    scale: 0.85;
+
+    width: 8em;
+  }
+
+  .footer .mobile .rigth h1 {
+    font-size: 17px;
+    color: white;
+    text-transform: uppercase;
+    margin-right: 0.4em;
+  }
+
+  .footer .mobile .rigth a {
+    scale: 0.55;
+    margin: 0 -0.7em;
+  }
+
+  .footer .mobile .hr {
+    margin: 1.4em auto 3em;
+
+    width: 100%;
+    height: 0.05em;
+    background-color: white;
   }
 
   .footer .mid * {

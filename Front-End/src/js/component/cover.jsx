@@ -1,4 +1,4 @@
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 /* npm install --save @fortawesome/react-fontawesome */
@@ -12,11 +12,21 @@ import "../../styles/component/cover.css";
 
 export const Cover = (props) => {
   const [like, setLike] = useState(false);
+  const [more, setMore] = useState(false);
 
-  const handleLike =()=>{
-    if(!like) setLike(true);
-    else setLike(false)
-  }
+  const handleLike = () => {
+    setLike(!like);
+  };
+
+  /* Control see more link depends of text size - DOM */
+  useEffect(() => {
+    let text = document.querySelector(`#overview-${props.id}`);
+    const length = text.innerHTML.length;
+    if (length > 150) {
+      setMore(true);
+      text.innerHTML = text.innerHTML.slice(0, 100) + "...";
+    }
+  }, []);
 
  
     const height = document.querySelector("#overview").scrollHeight;
@@ -52,7 +62,11 @@ export const Cover = (props) => {
         </p>
       </div>
       <div className="info">
-        <p id="overview">{props.overview}</p>
+        <div className="p">
+          <p id={`overview-${props.id}`}>{props.overview}</p>
+          <a>{more ? "ver más" : ""}</a>
+        </div>
+
         <div className="lang">
           <p className="">Idioma</p>
           <div className="hr"></div>

@@ -9,11 +9,45 @@ import twitter from "../../img/Icon_Twitter.png";
 export const Footer = () => (
   <footer>
     <div className="footer container-fluid">
+
+      {/* MOBILE */}
+      <div className="row mobile hidden">
+        <div className="left content col">
+          <div className="select">
+            <img src={globe} alt="" width="18px" height="18px" />
+            <select
+              className=" form-select"
+              aria-label="Default select example"
+            >
+              <option defaultValue="Español">Español</option>
+              <option value="Ingles">Ingles</option>
+            </select>
+          </div>
+        </div>
+        <div className="rigth col d-flex">
+          <h1>Síguenos</h1>
+          <a href="">
+            <img src={facebook} alt="" />
+          </a>
+          <a href="">
+            <img src={linkedin} alt="" />
+          </a>
+          <a href="">
+            <img src={twitter} alt="" />
+          </a>
+        </div>
+        <div className="hr"></div>
+      </div>
+
+      {/* DESKTOP */}
       <div className="content row">
         <div className="first col-lg-2 col-4">
           <div className="select">
             <img src={globe} alt="" width="18px" height="18px" />
-            <select className=" form-select" aria-label="Default select example">
+            <select
+              className=" form-select"
+              aria-label="Default select example"
+            >
               <option defaultValue="Español">Español</option>
               <option value="Ingles">Ingles</option>
             </select>

@@ -13,19 +13,22 @@ export const Home = () => {
     <>
       <Hero />
       <div className="body container-fluid">
-        <h1>Top películas</h1>
+        <h1>
+          {store.films.length === 0 ? "No hay películas" : "Top películas"}{" "}
+        </h1>
         <div className="movies row">
           {store.films.map((value) => (
-            <Cover 
-            key={value.id}
-            title={value.title}
-            releaseDate={value.releaseDate}
-            originalLanguage={value.originalLanguage}
-            backdropPath={value.backdropPath}
-            voteAverage={value.voteAverage}
-            voteCount={value.voteCount}
-            overview={value.overview}
-             />
+            <Cover
+              key={value.id}
+              id={value.id}
+              title={value.title}
+              releaseDate={value.releaseDate}
+              originalLanguage={value.originalLanguage}
+              backdropPath={value.backdropPath}
+              voteAverage={value.voteAverage}
+              voteCount={value.voteCount}
+              overview={value.overview}
+            />
           ))}
         </div>
       </div>

@@ -56,20 +56,20 @@ body .movie-card {
   word-wrap: break-word;
 }
 
-.body .movie-card .info > p {
+.body .movie-card .info .p p {
   font-size: 12px;
 
-  overflow: hidden;
+  /*   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-line-clamp: 4; 
   line-clamp: 4;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: vertical; */
 }
 
 .body .movie-card .info .lang {
   display: flex;
   align-items: center;
- 
+  margin-top: 1em;
 }
 
 .body .movie-card .info .lang > p {
@@ -87,19 +87,29 @@ body .movie-card {
   background-color: rgba(215, 215, 215, 0.682);
   height: 0.5em;
   width: 0.2px;
-  margin: 0 0.4em;
+  margin: 0.2em 0.4em 0 0.4em;
+}
+
+/* READ MORE */
+
+.body .movie-card .info .p * {
+  display: inline !important;
+}
+
+.body .movie-card .info a {
+  margin-left: 0.4em;
+  color: #0d8eab;
+  text-decoration: underline;
+  font-size: 13px;
 }
 
 @media screen and (max-width: 768px) {
-
   .body .movie-card .cover {
-    height: 18em;
+    height: 15em;
   }
-  
-  .body .movie-card .cover img{
+
+  .body .movie-card .cover img {
     width: 20px;
     height: 20px;
   }
-
-  
 }
