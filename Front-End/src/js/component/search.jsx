@@ -179,7 +179,7 @@ export const Search = (props) => {
               <div
                 className="icon-search"
                 onClick={() => {
-                  props.setShowModal(false)
+                  props.setShowModal(false);
                   handleClickFilter();
                 }}
               >

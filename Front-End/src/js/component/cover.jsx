@@ -1,8 +1,4 @@
 import React, { useState , useEffect} from "react";
-import { Link } from "react-router-dom";
-
-/* npm install --save @fortawesome/react-fontawesome */
-/* npm install --save @fortawesome/free-solid-svg-icons */
 
 import likeWhite from "../../img/Icon_Like_White.png";
 import likeRed from "../../img/Icon_Like_Red.png";

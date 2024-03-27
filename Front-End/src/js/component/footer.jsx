@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 import "../../styles/component/footer.css";
 import globe from "../../img/Icon_Globe.png";

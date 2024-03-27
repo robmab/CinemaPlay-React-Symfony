@@ -72,7 +72,7 @@ module.exports = {
     //   files: path.resolve(__dirname, "src"),
     // }),
     new HtmlWebpackPlugin({
-      favicon: "4geeks.ico",
+      favicon: "ico.ico",
       template: "template.html",
     }),
   ],

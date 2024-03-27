@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useDimensions } from "../hooks/useDimensions.jsx";
 
 import "../../styles/component/hero.css";

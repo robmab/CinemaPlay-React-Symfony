@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 
 import { Search } from "./search.jsx";
 import "../../styles/component/modal.css";
